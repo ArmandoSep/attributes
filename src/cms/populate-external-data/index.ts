@@ -175,7 +175,7 @@ const createItem = (product: Product, templateElement: HTMLDivElement) => {
   const lastActivity = newItem.querySelector<HTMLDivElement>('[data-element="last-activity"]');
   const sourceType = newItem.querySelector<HTMLDivElement>('[data-element="source-type"]');
   const clarificationLink = newItem.querySelector<HTMLAnchorElement>('[data-element="clar-url"]');
-  const deal_notes = newItem.querySelector<HTMLDivElement>('[data-element="deal-notes"]');
+  const deal_notes = newItem.querySelector<HTMLParagraphElement>('[data-element="deal-notes"]');
   const color_line = newItem.querySelector<HTMLDivElement>('[data-element="color_line"]');
 
   // Populate inner elements
@@ -187,7 +187,6 @@ const createItem = (product: Product, templateElement: HTMLDivElement) => {
   if (sourceType) sourceType.textContent = product.source_type;
   if (clarificationLink) clarificationLink.href = product.clarification_url;
   if (deal_notes) deal_notes.textContent = product.notes;
-  // Set color
   if (sourceType) sourceType.setAttribute("style", `background:${product.color};`);
   if (color_line) color_line.setAttribute("style", `background:${product.color};`);
   return newItem;
