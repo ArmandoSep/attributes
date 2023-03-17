@@ -90,6 +90,8 @@
     const lastActivity = newItem.querySelector('[data-element="last-activity"]');
     const sourceType = newItem.querySelector('[data-element="source-type"]');
     const clarificationLink = newItem.querySelector('[data-element="clar-url"]');
+    const deal_notes = newItem.querySelector('[data-element="deal-notes"]');
+    const color_line = newItem.querySelector('[data-element="color_line"]');
     if (address)
       address.textContent = product.address;
     if (dateSubmitted)
@@ -104,6 +106,12 @@
       sourceType.textContent = product.source_type;
     if (clarificationLink)
       clarificationLink.href = product.clarification_url;
+    if (deal_notes)
+      deal_notes.textContent = product.notes;
+    if (sourceType)
+      sourceType.setAttribute("style", `background:${product.color};`);
+    if (color_line)
+      color_line.setAttribute("style", `background:${product.color};`);
     return newItem;
   };
   var collectCategories = (products) => {

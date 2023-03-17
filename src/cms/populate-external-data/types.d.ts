@@ -7,6 +7,8 @@ export interface Product {
   last_activity_date: string;
   source_type: string;
   clarification_url: string;
+  notes:string;
+  color:string;
   name: string;
   email: string;
 }
